@@ -1,56 +1,18 @@
-/*let add = document.querySelector("#add");
-let subtract = document.querySelector("#subtract");
+var css = document.querySelector("h3");
+var color1 = document.querySelector(".color1");
+var color2 = document.querySelector(".color2");
+var body = document.getElementById("gradient")
 
-function Selector() {
-    let output = document.querySelector("#output");
-}
+function setGradient() {
+    body.style.background = "linear-gradient(to right, " 
+    + color1.value 
+    + ", " 
+    + color2.value 
+    + ")";
 
-function addition() {
-  let result = Number(output.innerText) + 1;
-
-  if (result > 10) { 
-    result = 0;
-  }
-
-  output.innerText = result;
-}
-
-function subtraction() {
-    let result = Number(output.innerText) - 1;
-      
-    if (result < 0) {
-      result = 0;
-    }
-      
-    output.innerText = result;
-}
-
-add.addEventListener("click", addition);
-
-subtract.addEventListener("click", subtraction);*/
-
-const add = document.querySelector("#add");
-const subtract = document.querySelector("#subtract");
-
-function Selector() {
-  let output = document.querySelector("#output");
+    css.textContent = body.style.background + ";";
 };
 
-function addition() {
-  let result = Number(output.innerText) + 1;
-  if (result > 10) {
-    result = 0;
-  }
-  output.innerText = result;
-}
-
-function subtraction() {
-  let result = Number(output.innerText) - 1;
-  if (result < 0) {
-    result = 0;
-  }
-  output.innerText = result;
-}
-
-add.addEventListener("click", addition);
-subtract.addEventListener("click", subtraction);
+color1.addEventListener("input", setGradient)
+    
+color2.addEventListener("input", setGradient)
